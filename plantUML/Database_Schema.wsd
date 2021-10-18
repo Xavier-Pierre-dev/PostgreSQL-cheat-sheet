@@ -1,0 +1,57 @@
+@startuml
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "person" as e01 {
+    id : BIGSERIAL NOT NULL <<PK>>
+    --
+    first_name VARCHAR(50) NOT NULL
+    last_name VARCHAR(50) NOT NULL
+    gender VARCHAR(7) NOT NULL
+    email VARCHAR(100) 
+    date_of_birth DATE NOT NULL
+    country_of_birth VARCHAR(100) NOT NULL
+    car_id BIGINT REFERENCES car(id) UNIQUE (car_id) <<FK>>
+}
+
+entity "car" as e02 {
+    id : BIGINT NOT NULL <<PK>>
+    --
+    make VARCHAR(100) NOT NULL
+    model VARCHAR(100) NOT NULL
+    price NULMERIC(12,9) NOT NULL
+}
+
+
+entity "person" as e03 {
+    id : BIGSERIAL NOT NULL <<PK>>
+    --
+    first_name VARCHAR(50) NOT NULL
+    last_name VARCHAR(50) NOT NULL
+    gender VARCHAR(7) NOT NULL
+    email VARCHAR(100) 
+    date_of_birth DATE NOT NULL
+    country_of_birth VARCHAR(100) NOT NULL
+}
+
+entity "car" as e04 {
+    id : BIGINT NOT NULL <<PK>>
+    --
+    make VARCHAR(100) NOT NULL
+    model VARCHAR(100) NOT NULL
+    price NULMERIC(12,9) NOT NULL
+    person_id BIGINT REFERENCES person(id) UNIQUE (person_id) <<FK>>
+}
+
+
+
+' Zero or One	|o--
+' Exactly One	||--
+' Zero or Many	}o--
+' One or Many	}|--
+e01 |o-- e02
+e04 |o-- e03
+
+
+@enduml
