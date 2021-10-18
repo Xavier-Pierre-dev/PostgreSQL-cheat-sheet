@@ -1914,8 +1914,8 @@ ___
 
 |possibility|command|result C|
 |---|---|---|
-|JOIN|![image](postgresql_forma/INNERJOIN.png)|![image](postgresql_forma/INNERJOIN2.png)|
-|LEFT JOIN|![image](postgresql_forma/LEFTJOIN.png)|![image](postgresql_forma/LEFTJOIN1.png)|
+|JOIN|![image](postgresql_forma/INNERJOIN.PNG)|![image](postgresql_forma/INNERJOIN2.PNG)|
+|LEFT JOIN|![image](postgresql_forma/LEFTJOIN.PNG)|![image](postgresql_forma/LEFTJOIN1.PNG)|
 
 command JOIN:
 ```SQl
@@ -2042,7 +2042,7 @@ VALUES (uuid_generate_v4(), 'John', 'Snow', 'Male', 'jonesnow@gmail.com', '281-1
 
 
 
-
+<br>
 
 
 <style>
